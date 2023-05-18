@@ -46,25 +46,25 @@ h1 {
 
 h1 span span {
   position: relative;
-  animation: move-text-color 0.75s forwards;
+  animation: move-text-color 2s infinite forwards;
   bottom: -1em;
   opacity: 0;
 }
 
 @keyframes move-text-color {
   0% {
-    bottom: -0.2em;
+    top: 0;
     opacity: 1;
-    color: #3e5c76;
+    color: #61dafb;
   }
 
   50% {
-    bottom: 0.2em;
+    top: -0.5em;
     color: #328cec;
   }
 
   100% {
-    bottom: 0;
+    top: 0;
     opacity: 1;
     color: #c0cb26;
   }

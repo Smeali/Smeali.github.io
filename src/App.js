@@ -9,6 +9,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Draggable>
+          <div class="animate__animated animate__heartBeat animate__delay-3s">
+            try dragging me!
+          </div>
+        </Draggable>
+
+        <Draggable>
           <div>
             <img src={logo} className="App-logo" alt="logo" />
           </div>
