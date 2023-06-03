@@ -1,4 +1,6 @@
 import logo from "./logo.svg";
+import linkedin from "./img/LinkedIn_logo.png";
+import linkedinshadow from "./img/LinkedIn_logo_shadow.png";
 import "./App.css";
 import "animate.css";
 import SplitText from "./components/SplitText";
@@ -8,12 +10,39 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Draggable>
-          <div class="animate__animated animate__heartBeat animate__delay-3s">
-            try dragging me!
-          </div>
-        </Draggable>
+        <div
+          class="badge-base LI-profile-badge"
+          data-locale="en_US"
+          data-size="medium"
+          data-theme="dark"
+          data-type="VERTICAL"
+          data-vanity="eliconley"
+          data-version="v1"
+        >
+          <a
+            class="badge-base__link LI-simple-link"
+            href="https://www.linkedin.com/in/eliconley?trk=profile-badge"
+          >
+            Eli Conley
+          </a>
+        </div>
+        <div>
+          <img
+            style={{
+              width: 50,
+              height: 50,
+            }}
+            src={linkedin}
+            className="logo-animated"
+            alt="LinkedIn-logo"
+          />
 
+          {/* <img
+            style={{ width: 50, height: 50 }}
+            src={linkedinshadow}
+            className="logo-shadow"
+          /> */}
+        </div>
         <Draggable>
           <div>
             <img src={logo} className="App-logo" alt="logo" />
