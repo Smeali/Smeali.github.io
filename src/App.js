@@ -5,8 +5,23 @@ import "./App.css";
 import "animate.css";
 import SplitText from "./components/SplitText";
 import Draggable from "react-draggable";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
+
+    script.src = "https://platform.linkedin.com/badges/js/profile.js";
+    script.async = true;
+    script.defer = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
