@@ -94,3 +94,34 @@ h1 span span {
   border: 2px solid black;
   border-radius: 10px;
 }
+
+.button-animated {
+  position: relative;
+  z-index: 1;
+  /* transition: transform 0.15s ease-in-out; */
+  transition: box-shadow 0.25s, top 0.25s, left 0.25s ease-out;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 5px black;
+  top: 0;
+  left: 0;
+}
+
+.button-animated:hover {
+  /* transform: translate(-5px, -5px); */
+  box-shadow: 0 0 0 0 black;
+  top: 3px;
+  left: 5px;
+}
+
+.container > * {
+  display: inline-block;
+}
+
+.description {
+  font-size: 2em;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  color: #14252e;
+}
