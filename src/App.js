@@ -10,12 +10,12 @@ import Home from "./pages/Home";
 
 export default function App() {
   let location = useLocation();
-  var animateOpacity = KUTE.fromTo(
+  /* var animateOpacity = KUTE.fromTo(
     "#page-container",
     { opacity: 1 },
     { opacity: 0.1 },
     { offset: 100, duration: 800 }
-  );
+  ); */
 
   return (
     <div className="page-container">
