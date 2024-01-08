@@ -1,0 +1,33 @@
+/* Window.css */
+.window {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  position: relative; /* Position header within window */
+}
+
+.window-header {
+  background: rgba(0, 102, 154, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  position: absolute; /* Position header at top */
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.window-close-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff; /* White color for button text */
+}
+
+.window-content {
+  padding: 15px;
+  margin-top: 45px; /* Adjust for header height */
+}

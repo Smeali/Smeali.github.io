@@ -1,79 +1,137 @@
-.App {
-  text-align: center;
+@import url("https://fonts.cdnfonts.com/css/futura-std-4");
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"),
+    url(/fonts/roboto/roboto-v20-latin-regular.woff2) format("woff2");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto Italic"),
+    url(/fonts/roboto/roboto-v20-latin-italic.woff2) format("woff2");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"),
+    url(/fonts/roboto/roboto-v20-latin-700.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RecoletaBlack;
+  font-display: swap;
+  src: url(/fonts/recoleta/RecoletaBlack.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RecoletaSemiBold;
+  font-display: swap;
+  src: url(/fonts/recoleta/RecoletaSemiBold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RecoletaMedium;
+  font-display: swap;
+  src: url(/fonts/recoleta/RecoletaMedium.woff2) format("woff2");
+}
+
+:root {
+  --bg-color: #001220;
+  --primary-font-color: #fbe9d5;
+  --nav-font-color: #fbe9d5;
+  --nav-background-color: #8a2d27;
+  --primary-color: #f3c07f;
+  --secondary-color: #0e848c;
+  --accent-color: #2c40eb;
+  --nav-title-font: "Futura Std", sans-serif;
+  --primary-font: "Roboto", Helvetica, sans-serif;
+  --font-headlines-bold: "RecoletaBlack", "Roboto", Helvetica, sans-serif;
+  --size-text-default: clamp(1rem, 6.66vw, 1.312rem);
+  --size-text-small: 0.85rem;
+  --size-text-medium: clamp(1.11rem, 6.66vw, 1.5rem);
+  --size-text-large: clamp(1.666rem, 6.66vw, 2rem);
+  --size-text-xlarge: clamp(2.5rem, 6.66vw, 3rem);
+  --size-text-xxlarge: clamp(2rem, 10vw, 3.33rem);
+  --size-text-huge: clamp(2.5rem, 15vw, 4.2rem);
+  --nav-skew: skewY(-2deg);
+}
+
+::selection {
+  background: var(--accent-color); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--accent-color); /* Gecko Browsers */
+}
+
+body {
+  margin: auto;
+  background: var(--bg-color);
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url("./img/blob-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* linear-gradient(
+    -45deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite; */
+}
+
+.page-container:after {
+  background-image: url("./img/blob-background2.svg");
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content-wrap {
+  flex: 1;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0rem 4rem;
 }
 
-.App-link {
-  color: #def03a;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-h1 {
-  font-size: 3em;
-  text-align: center;
-  font-weight: 600;
-  color: #c0cb26;
-}
-
-h1 span span {
-  position: relative;
-  animation: move-text-color 2s infinite forwards;
-  bottom: -1em;
-  opacity: 0;
-}
-
-@keyframes move-text-color {
-  0% {
-    top: 0;
-    opacity: 1;
-    color: #61dafb;
-  }
-
-  50% {
-    top: -0.5em;
-    color: #328cec;
-  }
-
-  100% {
-    top: 0;
-    opacity: 1;
-    color: #c0cb26;
-  }
+.card-blur {
+  box-shadow: 0 15px 25px var(--bg-color);
+  border-radius: 5px;
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.09);
+  padding: 0.5rem;
 }
 
 .logo-animated {
   position: relative;
   z-index: 1;
-  /* transition: transform 0.15s ease-in-out; */
   transition: box-shadow 0.25s, top 0.25s, left 0.25s ease-out;
   border: 2px solid black;
   border-radius: 10px;
@@ -83,22 +141,14 @@ h1 span span {
 }
 
 .logo-animated:hover {
-  /* transform: translate(-5px, -5px); */
   box-shadow: 0 0 0 0 black;
   top: 3px;
   left: 5px;
 }
 
-.logo-shadow {
-  position: relative;
-  border: 2px solid black;
-  border-radius: 10px;
-}
-
 .button-animated {
   position: relative;
   z-index: 1;
-  /* transition: transform 0.15s ease-in-out; */
   transition: box-shadow 0.25s, top 0.25s, left 0.25s ease-out;
   border: 2px solid black;
   border-radius: 10px;
@@ -108,20 +158,106 @@ h1 span span {
 }
 
 .button-animated:hover {
-  /* transform: translate(-5px, -5px); */
   box-shadow: 0 0 0 0 black;
   top: 3px;
   left: 5px;
 }
 
-.container > * {
-  display: inline-block;
+.button-animated.default {
+  background-color: var(--primary-color);
+  font-family: var(--primary-font);
+  font-size: calc(1rem + 0.390625vw);
+  padding: 0rem 1rem;
+  height: 3rem;
 }
 
-.description {
-  font-size: 2em;
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  font-weight: 600;
-  color: #14252e;
+h1 {
+  font-family: var(--nav-title-font);
+  font-size: var(--size-text-large);
+  color: var(--primary-font-color);
+}
+
+h1.name {
+  font-family: var(--font-headlines-bold);
+  font-size: var(--size-text-huge);
+  color: black;
+  position: relative;
+  top: 0;
+  transition: top 0.35s, text-shadow 0.35s;
+  -webkit-text-stroke: 0.05rem white;
+  text-shadow: 0.3rem 0.3rem transparent;
+}
+
+h1.name:hover {
+  top: -0.5rem;
+  text-shadow: 0.4rem 0.4rem var(--primary-color);
+}
+
+h1.title {
+  font-family: var(--font-headlines-bold);
+  font-size: var(--size-text-huge);
+  position: relative;
+  top: 0;
+  transition: top 0.35s, text-shadow 0.35s;
+  -webkit-text-stroke: 0.1rem black;
+  text-shadow: 0.3rem 0.3rem black;
+}
+
+p {
+  font-family: var(--primary-font);
+  font-size: var(--size-text-medium);
+  color: var(--primary-font-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  bottom: -0.5rem;
+  background: var(--primary-color);
+  height: 0.3rem;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+a:hover:after,
+a:focus:after,
+a:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+.dynamic-words {
+  --bg-size: 400%;
+  --color-one: hsl(36, 78%, 46%);
+  --color-two: hsl(61, 72%, 52%);
+  background: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 10s infinite linear;
+}
+
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
 }

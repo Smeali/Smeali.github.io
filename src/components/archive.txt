@@ -1,0 +1,102 @@
+/*
+// state to manage the dark mode
+//const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+const [toggleDarkMode, setToggleDarkMode] = useState(true);
+
+useEffect(() => {
+  const data = window.localStorage.getItem("toggleDarkMode");
+  if (data !== null) setToggleDarkMode(JSON.parse(data));
+}, []);
+
+// function to toggle the dark mode as true or false
+const toggleDarkTheme = () => {
+  localStorage.setItem("toggleDarkMode", JSON.stringify(!toggleDarkMode));
+  setToggleDarkMode(!toggleDarkMode);
+};
+
+// applying the primary and secondary theme colors
+const darkTheme = createTheme({
+  palette: {
+    mode: toggleDarkMode ? "dark" : "light", // handle the dark mode state on toggle
+    primary: {
+      main: "#90caf9",
+    },
+    secondary: {
+      main: "#131052",
+    },
+  },
+});
+
+<ThemeProvider theme={darkTheme}>
+<CssBaseline />
+
+        <Typography style={{ marginTop: "40%" }} fontSize="1.2rem">
+          Toggle Dark/Light mode
+        </Typography>
+        <Switch checked={toggleDarkMode} onChange={toggleDarkTheme} />
+        
+{/* <h1>
+          <SplitText copy="Under Construction!" role="heading"></SplitText>
+        </h1>
+        <button>Open popup</button> 
+        {/* <PopupWindow trigger={true}>
+          <a>This is a popup window</a>
+          <div
+            class="badge-base LI-profile-badge"
+            data-locale="en_US"
+            data-size="medium"
+            data-theme={"dark"}
+            data-type="VERTICAL"
+            data-vanity="eliconley"
+            data-version="v1"
+          >
+            <a
+              class="badge-base__link LI-simple-link"
+              href="https://www.linkedin.com/in/eliconley?trk=profile-badge"
+            ></a>
+          </div>
+        </PopupWindow>
+
+        
+        @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+  font-weight: 600;
+  color: #c0cb26;
+}
+
+h1 span span {
+  position: relative;
+  animation: move-text-color 2s infinite forwards;
+  bottom: -1em;
+  opacity: 0;
+}
+
+@keyframes move-text-color {
+  0% {
+    top: 0;
+    opacity: 1;
+    color: #61dafb;
+  }
+
+  50% {
+    top: -0.5em;
+    color: #328cec;
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+    color: #c0cb26;
+  }
+}
+*/

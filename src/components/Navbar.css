@@ -1,0 +1,204 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  margin-top: 2rem;
+  background-color: var(--nav-background-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-style: solid;
+  border: 1rem 1rem 1rem 1rem black;
+  box-shadow: 0.5rem 0.3rem black;
+  position: relative;
+  width: 90%;
+  transform: var(--nav-skew) translateX(-40%);
+  -webkit-transform: var(--nav-skew) translateX(-40%);
+}
+
+.slide-in {
+  animation: slide-in 1s forwards;
+  -webkit-animation: slide-in 1s forwards;
+}
+
+.slide-out {
+  animation: slide-out 1s forwards;
+  -webkit-animation: slide-out 1s forwards;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: var(--nav-skew) translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  100% {
+    -webkit-transform: var(--nav-skew) translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: var(--nav-skew) translateX(0%);
+  }
+  100% {
+    transform: var(--nav-skew) translateX(-40%);
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    -webkit-transform: var(--nav-skew) translateX(0%);
+  }
+  100% {
+    -webkit-transform: var(--nav-skew) translateX(-40%);
+  }
+}
+
+.site-title {
+  font-size: var(--size-text-huge);
+  top: -0.1312rem;
+  font-family: var(--nav-title-font);
+  position: relative;
+  color: white;
+  text-decoration: none;
+  transition: top 0.35s, text-shadow 0.35s;
+  -webkit-text-stroke: 0.1rem black;
+  text-shadow: 0.2rem 0.2rem #000;
+}
+
+.site-title:hover {
+  top: -0.5rem;
+  text-shadow: 0.3rem 0.3rem #000;
+}
+
+.site-title:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  bottom: -0.5rem;
+  background: #000;
+  height: 0.3rem;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.site-title:hover:after,
+.site-title:focus:after,
+.site-title:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  font-size: var(--size-text-large);
+  padding-right: 3rem;
+  font-family: var(--nav-title-font);
+  color: var(--primary-font-color);
+  align-items: center;
+}
+
+.nav li {
+  margin-top: 0rem;
+}
+
+nav li a:before {
+  background-color: transparent;
+  transform: scale(1.5);
+}
+
+.nav li a {
+  color: inherit;
+  position: relative;
+  text-decoration: none;
+  top: 0;
+  transition: top 0.35s, padding 0.5s, border 0.15s, text-shadow 0.35s;
+  background-color: transparent;
+  -webkit-text-stroke: 0.05rem black;
+  text-shadow: 0.1rem 0.05rem black;
+}
+
+.nav li a:hover {
+  top: -0.35rem;
+  text-shadow: 0.15rem 0.1rem black;
+  transform: rotate(-6deg);
+  display: block;
+  animation: tiltBounce 0.15s ease;
+  animation-fill-mode: forwards;
+}
+
+nav li a:hover:after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  background-color: var(--accent-color);
+  left: 0%;
+  top: 10%;
+  transform: rotate(-10deg);
+  z-index: -1;
+  transform-origin: center center;
+  animation: jelly 0.45s 0.08s infinite;
+}
+
+@keyframes tiltBounce {
+  0% {
+    transform: scale(1) rotate(-1deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(-7deg);
+  }
+  100% {
+    transform: scale(1.15) rotate(-7deg);
+  }
+}
+
+@keyframes jelly {
+  0% {
+    width: 100%;
+    transform: scale(1.15, 1) skewX(20deg) translateY(3px) rotateX(40deg)
+      rotateY(10deg) rotateZ(-10deg);
+  }
+  50% {
+    width: 100%;
+    transform: scale(1.25, 1.1) skewX(-15deg) translateY(-2px) translateZ(-30px);
+  }
+  100% {
+    width: 100%;
+    transform: scale(1.25, 1) skewX(20deg) translateY(3px) rotateX(-40deg)
+      rotateY(-10deg) rotateZ(-15deg);
+  }
+}
+
+.nav button {
+  background-color: var(--accent-color);
+  font-size: inherit;
+  color: black;
+  padding: 0rem 1rem;
+  height: 3rem;
+}
+
+.reveal {
+  color: #0000;
+  background: linear-gradient(red 0 0) no-repeat;
+  background-size: 0% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: t 1.2s 0.5s both;
+}
+
+@keyframes t {
+  to {
+    background-size: 100% 100%;
+  }
+}
