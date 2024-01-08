@@ -6,7 +6,7 @@
   font-weight: 400;
   font-display: swap;
   src: local("Roboto"),
-    url(/fonts/roboto/roboto-v20-latin-regular.woff2) format("woff2");
+    url(./fonts/roboto/roboto-v20-latin-regular.woff2) format("woff2");
 }
 
 @font-face {
@@ -15,7 +15,7 @@
   font-weight: 400;
   font-display: swap;
   src: local("Roboto Italic"),
-    url(/fonts/roboto/roboto-v20-latin-italic.woff2) format("woff2");
+    url(./fonts/roboto/roboto-v20-latin-italic.woff2) format("woff2");
 }
 
 @font-face {
@@ -24,25 +24,25 @@
   font-weight: 700;
   font-display: swap;
   src: local("Roboto Bold"),
-    url(/fonts/roboto/roboto-v20-latin-700.woff2) format("woff2");
+    url(./fonts/roboto/roboto-v20-latin-700.woff2) format("woff2");
 }
 
 @font-face {
   font-family: RecoletaBlack;
   font-display: swap;
-  src: url(/fonts/recoleta/RecoletaBlack.woff2) format("woff2");
+  src: url(./fonts/recoleta/RecoletaBlack.woff2) format("woff2");
 }
 
 @font-face {
   font-family: RecoletaSemiBold;
   font-display: swap;
-  src: url(/fonts/recoleta/RecoletaSemiBold.woff2) format("woff2");
+  src: url(./fonts/recoleta/RecoletaSemiBold.woff2) format("woff2");
 }
 
 @font-face {
   font-family: RecoletaMedium;
   font-display: swap;
-  src: url(/fonts/recoleta/RecoletaMedium.woff2) format("woff2");
+  src: url(./fonts/recoleta/RecoletaMedium.woff2) format("woff2");
 }
 
 :root {

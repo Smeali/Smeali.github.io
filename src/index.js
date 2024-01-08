@@ -13,7 +13,7 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 const firebaseConfig = {
   apiKey: GOOGLE_API_KEY,
